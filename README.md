@@ -10,7 +10,7 @@ This repository contains the extended RobotDodge project developed for SIT771 Ob
 - `Cyclops` uses sinusoidal zigzag movement.
 - `Hunter` tracks the player and accelerates over time.
 - Delegate-based robot spawning using `List<Func<Robot>>` and lambda expressions.
-- Zero-vector shooting guard.
+- Zero-vector shooting guard before a bullet is created.
 - One-life-per-update collision policy.
 - Time-based spawning using `Stopwatch` instead of frame-based probability checks.
 
@@ -21,12 +21,15 @@ This repository contains the extended RobotDodge project developed for SIT771 Ob
 - `Robot.cs` — abstract robot base class and robot subtypes.
 - `Player.cs` — player movement, lives and score.
 - `Bullet.cs` — projectile movement and collision behaviour.
-- `SplashKit.cs` — SplashKit C# bindings used by the project.
 - `Resources/images/Player.png` — player image resource.
+
+## SplashKit prerequisite
+
+The large `SplashKit.cs` C# binding used in the local Deakin/SplashKit project is external/generated support code rather than part of the 7.4H implementation, so it is not committed here. To build this repository in the same environment, place the corresponding generated `SplashKit.cs` binding in the project root and ensure the SplashKit native runtime is installed.
 
 ## Build
 
-The project targets `.NET 10.0` and requires the SplashKit native runtime to be installed in the execution environment.
+The project targets `.NET 10.0`.
 
 ```bash
 dotnet build
