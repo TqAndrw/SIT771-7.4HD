@@ -98,15 +98,10 @@ namespace RobotDodge
                 playerCentre
             );
 
-            if (direction.X == 0 && direction.Y == 0)
-            {
-                Velocity.X = 0;
-                Velocity.Y = 0;
-                return;
-            }
+            direction = SplashKit.UnitVector(direction);
 
             Velocity = SplashKit.VectorMultiply(
-                SplashKit.UnitVector(direction),
+                direction,
                 2.0
             );
         }
